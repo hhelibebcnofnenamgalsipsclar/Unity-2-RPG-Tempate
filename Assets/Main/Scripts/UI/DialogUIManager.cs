@@ -52,7 +52,7 @@ public class DialogUIManager : MonoBehaviour
     public void NextBranch(int branchSelect)
     {
         // Add ReciveDialogueBranch with newBranch being next branch
-        RecieveDialogueBranch(branch.ResponseOption[branchSelect].nextBranch);
+        RecieveDialogueBranch(branch.ResponseOptions[branchSelect].nextBranch);
         ActiveDialogue();
         NextDialogue(); 
     }
@@ -72,7 +72,7 @@ public class DialogUIManager : MonoBehaviour
        // DeactiveDialogue(); // Remove this and
        // add next Dialogue mechanism here
        //if at end of branch
-       if(currentIndex>= branch.DialogueLines.Count);
+       if(currentIndex>= branch.DialogueLines.Count)
        {
            if(responses ==0){
                DeactiveDialogue();
@@ -87,11 +87,17 @@ public class DialogUIManager : MonoBehaviour
                         break;
                    }
                    responsesHolder[i].gameObject.SetActive(true);
-                   responsesHolder[i].GetComponentInChildren<TextMeshProUGUI>().text = branch.ResponseOption[i].text;
+                   responsesHolder[i].GetComponentInChildren<TextMeshProUGUI>().text = branch.ResponseOptions[i].text;
 
                }
            }
        }
 
+        else
+        {
+            mainText.GetComponent<TextMeshProUGUI>().text = branch.DialogueLines[currentIndex];
+            continueText.SetActive(true);
+            currentIndex++;
+        }
     }
 }

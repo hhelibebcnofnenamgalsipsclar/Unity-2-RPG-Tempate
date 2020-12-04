@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c768c771482b7244c91131ad84288878, type: 3}
-  m_Name: BR_1
+  m_Name: PT1
   m_EditorClassIdentifier: 
-  dialogueID: Yes
+  dialogueID: war
   DialogueLines:
-  - you selected Yes
+  - For The Motherland.........
   ResponseOptions: []
